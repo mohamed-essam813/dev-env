@@ -1,10 +1,8 @@
 # Apps to install
-___
 - [ ] [VSCode](https://code.visualstudio.com/)
 - [ ] [Slack](https://slack.com/downloads/osx)
 
 # Terminal
-___
 - [ ] [HyperTerm](https://hyper.is/) macOS
 - [ ] [ConEmu](https://conemu.github.io/) Windows
 - [ ] Replace .bash_profile with one found in terminal/.bash_profile
@@ -29,5 +27,5 @@ git config --global core.eol lf
 
 # Fonts
 - [ ] [RobotoMono](https://fonts.google.com/selection?category=Monospace&selection.family=Roboto+Mono)
-- [ ] [FiraMono](tps://fonts.google.com/selection?category=Monospace&selection.family=Fira+Mono)
+- [ ] [FiraMono](https://fonts.google.com/selection?category=Monospace&selection.family=Fira+Mono)
 - [ ] [Mensch](http://robey.lag.net/2010/06/21/mensch-font.html)

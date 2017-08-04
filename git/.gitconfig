@@ -1,0 +1,19 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = Muhammad Tarek
+	email = muhammadtarek96@gmail.com
+[url "https://github"]
+	insteadOf = git://github
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = emacs
+[help]
+        autocorrect = 1
+[push]
+        default = simple

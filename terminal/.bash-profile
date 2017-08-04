@@ -1,4 +1,5 @@
 # Git
+# Comment these functions incase of Windows
 git-branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -14,6 +15,7 @@ git-dirty() {
 
 # Env
 export PS1="\e[1;34m\n\h @ \e[0;36m\w\e[0;32m\$(git-branch) \$(git-dirty)\e[m\n$ "
+#export PS1="\e[1;34m\n\h @ \e[0;36m\w\e[m\n$ " Windows ONYL
 export PS2="$"
 
 # Aliases

@@ -1,6 +1,7 @@
 ## Apps to install
 
 - [ ] [VSCode](https://code.visualstudio.com/)
+- [ ] [Postman](https://www.getpostman.com/)
 - [ ] [Slack](https://slack.com/downloads/osx)
 
 ## Terminal

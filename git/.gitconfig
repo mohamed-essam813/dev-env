@@ -12,7 +12,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore
-        editor = emacs
+        editor = code-insiders
 [help]
         autocorrect = 1
 [push]

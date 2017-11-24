@@ -60,6 +60,8 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -72,11 +74,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='code-insiders'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -88,24 +90,10 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias mkdir='mkdir -pv'
-alias ls='ls -FHG'
-alias less='less -FSRXc'
-#cd() { builtin cd "$@"; ls; }
-alias cd..='cd ../'
-alias ..='cd ../'
-alias ...='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../../'
-alias .6='cd ../../../../../../'
 alias dsk='cd ~/Desktop'
-alias ep='cd ~/Desktop/enterprise'
-alias wp='cd ~/Desktop/web-packages'
-alias vp='cd ~/Desktop/vezeeta-payment-web'
+alias work='cd ~/Desktop/Work'
+alias personal='cd ~/Desktop/Personal'
+alias college='cd ~/Desktop/College'
 alias edit='code-insiders'
 alias f='open -a Finder ./'
 alias ~="cd ~"
@@ -113,81 +101,6 @@ alias c='clear'
 trash () { command mv "$@" ~/.Trash ; }
 ql () { qlmanage -p "$*" >& /dev/null; }
 
-
-# Git
-alias gcl='git clone'
-alias ga='git add'
-alias grm='git rm'
-alias gap='git add -p'
-alias gall='git add -A'
-alias gf='git fetch --all --prune'
-alias gft='git fetch --all --prune --tags'
-alias gfv='git fetch --all --prune --verbose'
-alias gftv='git fetch --all --prune --tags --verbose'
-alias gus='git reset HEAD'
-alias gpristine='git reset --hard && git clean -dfx'
-alias gclean='git clean -fd'
-alias gm="git merge"
-alias gmv='git mv'
-alias g='git'
-alias get='git'
-alias gst='git status'
-alias gs='git status'
-alias gss='git status -s'
-alias gsu='git submodule update --init --recursive'
-alias gl='git pull'
-alias glum='git pull upstream master'
-alias gpr='git pull --rebase'
-alias gpp='git pull && git push'
-alias gup='git fetch && git rebase'
-alias gp='git push'
-alias gpo='git push origin'
-alias gpu='git push --set-upstream'
-alias gpom='git push origin master'
-alias gr='git remote'
-alias grv='git remote -v'
-alias gra='git remote add'
-alias gd='git diff'
-alias gdv='git diff -w "$@" | vim -R -'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gcm='git commit -v -m'
-alias gci='git commit --interactive'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gbt='git branch --track'
-alias gbm='git branch -m'
-alias gbd='git branch -d'
-alias gbD='git branch -D'
-alias gcount='git shortlog -sn'
-alias gcp='git cherry-pick'
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias gcb='git checkout -b'
-alias gcob='git checkout -b'
-alias gct='git checkout --track'
-alias gexport='git archive --format zip --output'
-alias gdel='git branch -D'
-alias gmu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
-alias gll='git log --graph --pretty=oneline --abbrev-commit'
-alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(magenta)%d%Creset %s %C(yellow)<%an> %C(cyan)(%cr)%Creset' --abbrev-commit --date=relative"
-alias ggs="gg --stat"
-alias gsl="git shortlog -sn"
-alias gwc="git whatchanged"
-alias gt="git tag"
-alias gta="git tag -a"
-alias gtd="git tag -d"
-alias gtl="git tag -l"
-# From http://blogs.atlassian.com/2014/10/advanced-git-aliases/
-# Show commits since last pull
-alias gnew="git log HEAD@{1}..HEAD@{0}"
-# Add uncommitted and unstaged changes to the last commit
-alias gcaa="git commit -a --amend -C HEAD"
-alias ggui="git gui"
-alias gcam="git commit -am"
-alias gcsam="git commit -S -am"
-alias gstd="git stash drop"
-alias gstl="git stash list"
 
 # Tiny terminal care config
 export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
@@ -235,3 +148,9 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+. ~/.oh-my-zsh/plugins/z.sh
+. ~/.oh-my-zsh/plugins/git/
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/plugins/git/git.plugin.zsh

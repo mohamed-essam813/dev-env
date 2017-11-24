@@ -1,15 +1,15 @@
 ## Apps to install
 
-- [ ] [VSCode](https://code.visualstudio.com/)
-- [ ] [Postman](https://www.getpostman.com/)
-- [ ] [Slack](https://slack.com/downloads/osx)
+* [ ] [VSCode](https://code.visualstudio.com/)
+* [ ] [Postman](https://www.getpostman.com/)
+* [ ] [Slack](https://slack.com/downloads/osx)
 
 ## Terminal
 
-- [ ] [HyperTerm](https://hyper.is/) macOS
-- [ ] [ConEmu](https://conemu.github.io/) Windows
-- [ ] Replace .bash_profile with one found in terminal/.bash_profile
-- [ ] [To update bash pormot](https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+* [ ] [iTerm2](https://www.iterm2.com/) macOS
+* [ ] [ConEmu](https://conemu.github.io/) Windows
+* [ ] zsh and oh-my-zsh
+* [ ] Replace .zshrc with one found in terminal/.zshrc
 
 ## git
 
@@ -27,13 +27,13 @@ git config --global core.eol lf
 
 ## yarn
 
-- [ ] install nodejs
-- [ ] install [yarn](https://yarnpkg.com/en/)
-- [ ] install create-react-app
+* [ ] install nodejs
+* [ ] install [yarn](https://yarnpkg.com/en/)
+* [ ] install create-react-app
 
 ## Fonts
 
-- [ ] [RobotoMono](https://fonts.google.com/selection?category=Monospace&selection.family=Roboto+Mono)
-- [ ] [FiraMono](https://fonts.google.com/selection?category=Monospace&selection.family=Fira+Mono)
-- [ ] [Mensch](http://robey.lag.net/2010/06/21/mensch-font.html)
-- [ ] [OperatorMono]
+* [ ] [RobotoMono](https://fonts.google.com/selection?category=Monospace&selection.family=Roboto+Mono)
+* [ ] [FiraMono](https://fonts.google.com/selection?category=Monospace&selection.family=Fira+Mono)
+* [ ] [Mensch](http://robey.lag.net/2010/06/21/mensch-font.html)
+* [ ] [OperatorMono]

@@ -62,6 +62,7 @@ plugins=(
   git
   zsh-autosuggestions
   yarn
+  zsh-256color
 )
 
 source $ZSH/oh-my-zsh.sh

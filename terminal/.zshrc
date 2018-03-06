@@ -99,6 +99,9 @@ alias edit='code-insiders'
 alias f='open -a Finder ./'
 alias ~="cd ~"
 alias c='clear'
+alias hideDesktop="defaults write com.apple.finder CreateDesktop false; killall Finder;"
+alias showDesktop="defaults write com.apple.finder CreateDesktop true; killall Finder;"
+alias pr="vsts code pr create --delete-source-branch --output table --open --auto-complete"
 trash () { command mv "$@" ~/.Trash ; }
 ql () { qlmanage -p "$*" >& /dev/null; }
 
@@ -108,7 +111,7 @@ export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 export TTC_SAY_BOX='cat'
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='~/Desktop/enterprise,~/Desktop/web-packages,~/Desktop/vezeeta-payment-web'
+export TTC_REPOS='~/Desktop/work'
 
 # The max directory-depth to look for git repositories in
 # the directories defined with `TTC_REPOS`. Note that the deeper
@@ -155,3 +158,49 @@ prompt_context() {
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+
+eval "$(rbenv init -)"
+export PATH=$PATH:/Users/muhammadtarek/lib/vsts-cli/bin
+export PATH=~/.local/bin:$PATH
+
+# source '/Users/muhammadtarek/lib/vsts-cli/vsts.completion'
+
+#
+# Main prompt
+#
+
+local host_name="%{$fg[cyan]%}muhammad-tarek"
+local path_string="%{$fg[cyan]%}%~"
+local prompt_string=">"
+
+# Make prompt_string red if the previous command failed.
+local return_status="%(?:$prompt_string:%{$fg[red]%}$prompt_string)"
+
+# # get the name of the branch we are on
+# _git_repo_name() {
+#     gittopdir=$(git rev-parse --git-dir 2> /dev/null)
+#     if [[ "foo$gittopdir" == "foo.git" ]]; then
+#         echo `basename $(pwd)`
+#     elif [[ "foo$gittopdir" != "foo" ]]; then
+#         echo `dirname $gittopdir | xargs basename`
+#     fi
+# }
+
+git-branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ @\1/'
+}
+
+git-dirty() {
+  # check if we're in a git repo
+  command git rev-parse --is-inside-work-tree &>/dev/null || return
+  # check if it's dirty
+  # using these emoji make multi line commands be broken and appear on one line. shrug.
+  #command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '☔️' || echo '☀️'
+  command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '⛈' || echo '🌞'
+}
+
+autoload -U colors
+colors
+setopt prompt_subst
+
+PROMPT=$'\n''${path_string}%{$fg[yellow]%}$(git-branch)%{$reset_color%} %{$fg[red]%}$(git-dirty)%{$reset_color%}'$'\n''%{$reset_color%}${return_status} %{$reset_color%}'

@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/muhammadtarek/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -92,7 +92,7 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias dsk='cd ~/Desktop'
-alias work='cd ~/Desktop/Work'
+alias work='cd ~/Desktop/Vezeeta'
 alias personal='cd ~/Desktop/Personal'
 alias college='cd ~/Desktop/College'
 alias edit='code-insiders'
@@ -104,6 +104,8 @@ alias showDesktop="defaults write com.apple.finder CreateDesktop true; killall F
 alias pr="vsts code pr create --delete-source-branch --output table --open --auto-complete"
 trash () { command mv "$@" ~/.Trash ; }
 ql () { qlmanage -p "$*" >& /dev/null; }
+alias mysql=/usr/local/mysql/bin/mysql
+alias composer="php /usr/local/bin/composer.phar"
 
 
 # Tiny terminal care config
@@ -111,7 +113,7 @@ export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 export TTC_SAY_BOX='cat'
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='~/Desktop/work'
+export TTC_REPOS='~/Desktop/Vezeeta'
 
 # The max directory-depth to look for git repositories in
 # the directories defined with `TTC_REPOS`. Note that the deeper
@@ -153,10 +155,10 @@ prompt_context() {
   fi
 }
 
-. ~/.oh-my-zsh/plugins/z.sh
+. ~/.oh-my-zsh/plugins/z/z.sh
 . ~/.oh-my-zsh/plugins/git/
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 
 eval "$(rbenv init -)"
@@ -186,21 +188,24 @@ local return_status="%(?:$prompt_string:%{$fg[red]%}$prompt_string)"
 #     fi
 # }
 
-git-branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ @\1/'
-}
+# git-branch() {
+#      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ @\1/'
+# }
 
-git-dirty() {
-  # check if we're in a git repo
-  command git rev-parse --is-inside-work-tree &>/dev/null || return
-  # check if it's dirty
-  # using these emoji make multi line commands be broken and appear on one line. shrug.
-  #command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '☔️' || echo '☀️'
-  command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '⛈' || echo '🌞'
-}
+# git-dirty() {
+#   # check if we're in a git repo
+#   command git rev-parse --is-inside-work-tree &>/dev/null || return
+#   # check if it's dirty
+#   # using these emoji make multi line commands be broken and appear on one line. shrug.
+#   #command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '☔️' || echo '☀️'
+#   command git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ] && echo '⛈' || echo '🌞'
+# }
 
-autoload -U colors
-colors
-setopt prompt_subst
+# autoload -U colors
+# colors
+# setopt prompt_subst
 
-PROMPT=$'\n''${path_string}%{$fg[yellow]%}$(git-branch)%{$reset_color%} %{$fg[red]%}$(git-dirty)%{$reset_color%}'$'\n''%{$reset_color%}${return_status} %{$reset_color%}'
+# PROMPT=$'\n''${path_string}%{$fg[yellow]%}$(git-branch)%{$reset_color%} %{$fg[red]%}$(git-dirty)%{$reset_color%}'$'\n''%{$reset_color%}${return_status} %{$reset_color%}'
+export PATH=$PATH:/Users/muhamamdtarek/lib/vsts-cli/bin
+export PATH=/usr/local/php5/bin:$PATH
+source '/Users/muhamamdtarek/lib/vsts-cli/vsts.completion'

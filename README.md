@@ -11,8 +11,8 @@ This is personal development env/packages
 ## Terminal
 
 * [ ] [iTerm3](https://www.iterm2.com/)
-* [ ] Replace .zshrc with one found in terminal/.zshrc
 * [ ] [zsh and oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+* [ ] Replace .zshrc with one found in terminal/.zshrc
 * [ ] [spaceship](https://github.com/denysdovhan/spaceship-prompt)
 * [ ] [zsh-completions](https://github.com/zsh-users/zsh-completions)
 * [ ] [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
@@ -22,13 +22,6 @@ This is personal development env/packages
 * [ ] [ariake-theme](jim-at-jibba/ariake-theme-iterm2)
 * [ ] [dracula-theme](https://draculatheme.com/iterm/)
 * [ ] [tiny-care-terminal](https://github.com/notwaldorf/tiny-care-terminal)
-
-## git
-
-```bash
-git config --global user.name "Muhammad Tarek"
-git config --global user.email muhammadtarek96@gmail.com
-```
 
 ### Switching to lf in Windows
 

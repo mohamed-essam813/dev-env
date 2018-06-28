@@ -101,11 +101,14 @@ alias ~="cd ~"
 alias c='clear'
 alias hideDesktop="defaults write com.apple.finder CreateDesktop false; killall Finder;"
 alias showDesktop="defaults write com.apple.finder CreateDesktop true; killall Finder;"
-alias pr="vsts code pr create --delete-source-branch --output table --open --auto-complete"
+alias pr="vsts code pr create --delete-source-branch --output table --open"
 trash () { command mv "$@" ~/.Trash ; }
 ql () { qlmanage -p "$*" >& /dev/null; }
 alias mysql=/usr/local/mysql/bin/mysql
 alias composer="php /usr/local/bin/composer.phar"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias python='python3'
+
 
 
 # Tiny terminal care config
@@ -113,7 +116,7 @@ export TTC_BOTS='tinycarebot,selfcare_bot,magicrealismbot'
 export TTC_SAY_BOX='cat'
 
 # List of folders to look into for `git` commits, comma separated.
-export TTC_REPOS='~/Desktop/Vezeeta'
+export TTC_REPOS='~/Desktop/Vezeeta,~/Desktop/Personal'
 
 # The max directory-depth to look for git repositories in
 # the directories defined with `TTC_REPOS`. Note that the deeper
@@ -208,4 +211,8 @@ local return_status="%(?:$prompt_string:%{$fg[red]%}$prompt_string)"
 # PROMPT=$'\n''${path_string}%{$fg[yellow]%}$(git-branch)%{$reset_color%} %{$fg[red]%}$(git-dirty)%{$reset_color%}'$'\n''%{$reset_color%}${return_status} %{$reset_color%}'
 export PATH=$PATH:/Users/muhamamdtarek/lib/vsts-cli/bin
 export PATH=/usr/local/php5/bin:$PATH
-source '/Users/muhamamdtarek/lib/vsts-cli/vsts.completion'
+export PATH="/usr/local/opt/opencv@2/bin:$PATH"
+export PYTHONPATH="${PYTHONPATH}/Library/Frameworks/Python.framewor‌​k/Versions/3.6/bin/"‌​:/usr/local/lib/pyth‌​on3.6/site-packages
+# source '/Users/muhamamdtarek/lib/vsts-cli/vsts.completion'
+SPACESHIP_NODE_SHOW=false
+SPACESHIP_TIME_SHOW=false

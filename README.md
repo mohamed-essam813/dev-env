@@ -19,7 +19,7 @@ This is personal development env/packages
 * [ ] [rubyenv](https://github.com/rbenv/rbenv)
 * [ ] [zsh syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
 * [ ] [powerline fonts](https://github.com/powerline/fonts/tree/master/RobotoMono)
-* [ ] [ariake-theme](jim-at-jibba/ariake-theme-iterm2)
+* [ ] [ariake-theme](https://github.com/jim-at-jibba/ariake-theme-iterm2)
 * [ ] [dracula-theme](https://draculatheme.com/iterm/)
 * [ ] [tiny-care-terminal](https://github.com/notwaldorf/tiny-care-terminal)
 
